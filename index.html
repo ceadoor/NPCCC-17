@@ -1,46 +1,996 @@
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <link href="assets/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/bootstrap.theme.min.css" rel="stylesheet" type="text/css"/>
         <meta charset="UTF-8">
+        <title>196 Nations</title>
+        <link rel="shortcut icon" href="assets/favicon.ico">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            .gray-bg{
+                background:#eee;    
+            }
+            .pageloader {
+                position: fixed;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                z-index: 1000000;
+                opacity:1;
+                overflow: hidden;
+                display: table;
+            }
+            .loader {
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .loader span{
+                color: #1ABC9C;
+                font-weight: 300;
+                font-size: 60px;
+                display: block;
+            }
+            .sp-hydrogen {
+                width: 96px;
+                height: 96px;
+                clear: both;
+                margin: 60px auto;
+                position: relative;
+                border: 3px #1ABC9C solid;
+                border-radius: 50%;
+                -webkit-animation: spHydro 0.7s infinite linear;
+                animation: spHydro 0.7s infinite linear;
+            }
+            .sp-hydrogen:before, .sp-hydrogen:after {
+                content: '';
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background-color: #252830;
+                border-radius: 50%;
+            }
+            .sp-hydrogen:before {
+                top: calc( 50% - 15px );
+                left: calc( 50% - 15px );
+            }
+            .sp-hydrogen:after {
+                top: -3px;
+                left: -3px;
+            }
+
+            @-webkit-keyframes spHydro {
+                from {
+                    -webkit-transform: rotate(0deg);
+                }
+                to {
+                    -webkit-transform: rotate(359deg);
+                }
+            }
+            @keyframes spHydro {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(359deg);
+                }
+            }
+
+
+
+            .animated {
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+
+            .animated.infinite {
+                -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+            }
+
+            @-webkit-keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                }
+
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .fadeIn {
+                -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
+            }
+
+            @-webkit-keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            .fadeOut {
+                -webkit-animation-name: fadeOut;
+                animation-name: fadeOut;
+            }
+
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="pageloader gray-bg">
+            <div class="loader">
+                <div class="sp-hydrogen"></div>
+            </div>
+        </div>
+
+        <a href="#" data-scroll="#" id="gotop"><img src="assets/scrollup.png" style="position: fixed; width: 50px; z-index: 90; right: 40px; bottom: 40px;"></a>
+
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-fixed-top navbar-inverse defnav" style="z-index: 100;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" style="margin: 0;padding: 0;">
+                        <img id="loggo" src="assets/logo-nav.png" id="mylogo">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!--<form class="navbar-form navbar-right">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" data-scroll="#">Home</a></li>
+                        <li><a href="#service" data-scroll="#service">Services</a></li>
+                        <li><a href="#about" data-scroll="#about">About</a></li>
+                        <li><a href="#jobswithbusiness" data-scroll="#jobswithbusiness">Jobs</a></li>
+                        <li><a href="#business" data-scroll="#mission">Business</a></li>
+                        <li><a href="#mission" data-scroll="#mission">Mission</a></li>
+                        <li><a href="#contact" data-scroll="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- slider -->
+        <section id="slidex" class="fullconatiner fixed_bg" style="background-image: url(assets/sliderbg.jpg); z-index: 95; position: relative;">
+            <div class="fullconatiner fixed_bg" style="position: absolute; top: 0;display: flex; align-items: center; left: 0; background: url(assets/pattern-2.png)">
+                <div class="container">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="col-md-6">
+                                    <h1 style="color: #e9b82c; font-weight: 400;">
+                                        <span style="background: rgba(255,255,255,.7);"> Business is a way of life. </span>
+                                        It can be compared with sports.</h1>
+                                    <p class="visible-lg visible-md visible-sm" style="font-size: 17px;">Life is short. In this short span, three factors play a key role. They are time, energy
+                                        and money. We utilise these factors for a better living, but ultimately our time
+                                        effort and money are benefitted by some other person or an establishment. A
+                                        successful personality would like to spend his time, energy and money for his own
+                                        benefit. For this there are many opportunities in today’s world and one among
+                                        them is by getting in to the world of business.</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-12 text-center">
+                                    <h1 style="color: #e9b82c; font-weight: 400;">What makes us different from others.</h1>
+                                    <p class="visible-lg visible-md visible-sm" style="font-size: 17px;">Conventional management programmes does not necessarily provide any extra
+                                        support or guidance to students when it comes to starting a business of their
+                                        own. This can create a lot of confusion among youngsters which pulls them back
+                                        from venturing in to something new. A thoroughly professional team of BUSINESS
+                                        START UP PROGRAMME (BSP), would provide all kind of support and
+                                        infrastructure to a candidate, who is interested to start with a business, after
+                                        successfully completing the training.</p>
+                                    <p>
+                                        <a class="btn btn-success btn-lg" href="#contact" data-scroll="#contact">Join today maximum tomorrow</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- service -->
+        <section class="fullconatiner" id="service" style="background: #ffffff; display: flex; align-items: center; ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <br><br>
+                        <h2>We will help you maximum</h2>
+                        <br><br>
+                    </div>
+                </div>
+                <div class="row text-center space-pad">
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-camera fa-4x main-color"></i>
+                            <h3>Idea development </h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-briefcase fa-4x main-color"></i>
+                            <h3>INVESTMENT</h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-desktop fa-4x main-color"></i>
+                            <h3>GUIDANCE</h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-folder fa-4x main-color"></i>
+                            <h3>ACCOUNTING</h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-hourglass fa-4x main-color"></i>
+                            <h3>HUMAN RESOURCE DEVOLOPMENT</h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-gift fa-4x main-color"></i>
+                            <h3>BRANDING</h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-fax fa-4x main-color"></i>
+                            <h3>MARKETING</h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div>
+                            <i class="fa fa-bar-chart fa-4x main-color"></i>
+                            <h3>PROJECT REPORT AND BUSINESS PLAN</h3>
+                            <div class="divider"></div>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Curabitur nec nisl odio. Mauris vehicula at nunc id posuere.
+                            </p>-->
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="fullconatiner" id="about"style="display: flex; align-items: center; ">
+            <div class="container">
+                <br><br>
+                <h2 style="">Introducing Ourself</h2>
+
+                <img src="assets/logo.png" class="visible-lg visible-md" style="float: right;">
+
+                <p>Life is short. In this short span, three factors play a key role. They are time, energy
+                    and money. We utilize these factors for a better living, but ultimately our time
+                    effort and money are benefitted by some other person or an establishment. A
+                    successful personality would like to spend his time, energy and money for his own
+                    benefit. For this there are many opportunities in today’s world and one among
+                    them is by getting in to the world of business.</p>
+                <p>Business is a way of life. It can be compared with sports. We see many successful
+                    sports person and business personalities and admire them. This success that they
+                    enjoy does not come all of a sudden without any effort in their respective field.
+                    The key word to success is hard work. It is not necessary that any person who
+                    venture into business taste success in the first instance. It is similar to world of
+                    sports. There are many sports persons in this world and only a few of them
+                    become legends. Similarly only some people who take up business emerge
+                    successful. Proper management of time energy and resources along with hard
+                    work and willingness to take risks and accept failure brings out success, to a
+                    sports person or a businessperson. That is why we call it a way of life. Any
+                    successful personality will have a story of hard work, courage and dedication
+                    behind him.</p>
+                <p class="hiddenx x1">Every person thinks of business at one point or the other. In fact life is related to
+                    business from the very beginning till the end in one way or other. But in real life
+                    only a lesser group show the courage to venture in to business. It is not lack of
+                    talent or education, but inability to take an initiative and fear of failure that pulls
+                    back an individual from making business as a profession. But if you have good
+                    logical idea, good vision, planning and willingness to work hard, you can take a
+                    business to successful level.</p>
+                <p class="hiddenx x1">On a social aspect, successful business is not something that is limited to an
+                    individual. It is a platform where there is a chance to be independent, create a lot
+                    of opportunities for many people and help in building a better society and nation.
+                    Business is way through which one can explore the various aspects of life.</p>
+                <p class="hiddenx x1">196 NATIONS believes in saying “TAKE RISKS-LETS DO BUSINESS”. We give full
+                    professional support and financial support to aspiring young minds who are
+                    genuine and have the dream, attitude and will power to start up an own
+                    company.</p>
+                <button class="btn btn-default" onclick="$('.hiddenx.x1').slideToggle('slow');">Read More</button>
+                <br><br>
+            </div>
+        </section>
+
+        <!-- Jobs with business -->
+        <div class="profile-card2" style="margin-bottom: -50px;" id="jobswithbusiness">
+            <div class="card-body bg-warning">
+                <div class="body-description">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <br>
+                                <h2 style="color: #1ABC9C;">JOBS WITH BUSINESS</h2>
+                                <p>Any regular course offered today is basically job oriented, since today’s generation
+                                    is career minded. A regular income is what everyone needs to lead a secure life.
+                                    And this wish for a financial security has big role in majority of youngsters not
+                                    taking up business as a career option. Keeping in mind the choice of today’s
+                                    generation, 196 NATIONS has come out with an idea which is called “Jobs with
+                                    Business”.</p>
+                                <p>“Jobs with Business” aims at providing a regular income to those who register with
+                                    196 NATIONS and undergo training in business development. Students for this
+                                    training will be selected on the basis of interview and will be given training for the
+                                    first 15 days. At the end of training period, those who have the right attitude and
+                                    skills will be posted as employees by the company in various areas of
+                                    entrepreneurship. Candidates would be posted anywhere in India, which will
+                                    assure a better exposure in various fields of business. Apart from the salary, the
+                                    employee is also assured of a fixed percentage of profit the company earns, where
+                                    he/she is posted. This definitely would give an added advantage to the candidates
+                                    as they are entitled to a salaried job and also be part of a business.</p>
+                                <p>196 NATIONS also would give all kind of professional and financial support to all
+                                    those candidates who are found to have the drive and ability to be an entrepreneur,
+                                    at the end of the training. Here the candidate can do business, with our support
+                                    thereby getting a stake in the profit earned by the company.</p>
+                                <p>196 NATIONS aims at building up a society where, through meticulous training
+                                    people can enter in to the world of business with a positive mind set, leading to
+                                    numerous opportunities for youngsters in the field of business alone or a job along
+                                    with a business.</p>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Testimonials -->
+        <div class="container-fluid fixed_bg text-center" id="testimonial" style="background-image: url(assets/twitter-bg.jpg);">
+            <section id="carousel">    				
+                <div class="container">
+                    <br><br><br>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 testimonial">
+                            <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
+                            <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+                                <!-- Carousel indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
+                                    <li data-target="#fade-quote-carousel" data-slide-to="1" class="active"></li>
+                                </ol>
+                                <!-- Carousel items -->
+                                <div class="carousel-inner">
+                                    <div class="item">
+                                        <img src="assets/temp/doe.jpg" class="profile-circle">
+                                        <blockquote>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+                                            <p><b>-- John Doe</b></p>
+                                        </blockquote>
+                                    </div>
+                                    <div class="active item">
+                                        <img src="assets/temp/doe.jpg" class="profile-circle">
+                                        <blockquote>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+                                            <p><b>-- Jane Doe</b></p>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>							
+                    </div>
+                    <br><br>
+                </div>
+            </section>
+            <!--<div>
+                <img src="assets/temp/doe.jpg" class="profile round medium">
+                <p class="faded_wite">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                </p>
+                <blockquote>-- Jobin Johnson</blockquote>
+            </div>-->
+        </div>
+
+        <section class="fullconatiner" id="business" style="display:flex; align-items:center;">
+            <div class="container">
+                <br><br>
+                <h2 class="text-center">Choose Your Brilliant Business</h2>
+                <br>
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 navy col-md-4">
+                            <img src="assets/business.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Jobs</h1>
+                                <p>
+                                    Jobs is an area which can be taken up as a business option with a
+
+                                    wide range of opportunities. This can be in the form of job recruiters or
+
+                                    consultants etc. Employment is one of the most essential things needed
+
+                                    for a person from past till present and will be the same in future also.
+
+                                    The ways of seeking employers and employees have changed along
+
+                                    with the time and now has reached a point where you get information
+
+                                    with a click. Large number of websites like naukri.com, or quikr.com,
+
+                                    shine.com etc. give you access to the world of employment with a
+
+                                    variety to choose from, which have become successful through timely
+
+                                    updating. As time advances, new ways of seeking employees will get
+
+                                    introduced in all media and this area of jobs will always have greater
+
+                                    prospects in business.
+                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
 
 
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Fashion/ Cosmetics</h1>
+                                <p>
+                                    Fashion is a popular style followed in aspects like
+
+                                    clothing, footwear, accessories etc. Fashion is an industry that
+
+                                    integrates creativity, design, business and technology that has a lot of
+
+                                    opportunities which attracts people. This is an area of business that
+
+                                    needs originality with business know how and management skills.
+
+                                    Fashion is a business which can be taken up by an individual who is
+
+                                    ambitious as well as perseverant.                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Shopping</h1>
+                                <p>
+                                    Shopping is providing to people all that they require. The
+
+                                    area of shopping has come a long way from small shops that sold
+
+                                    limited amount of goods, to super markets which catered to the things
+
+                                    needed for daily life under one roof and now to hyper markets where
+
+                                    everything from grocery to electronics can be bought under a single
+
+                                    roof. Adding to these is the entry of online shops where anything can
+
+                                    be brought to our doorstep according to our wish just sitting at home.
+
+                                    This area of shopping always have more areas to get involved into as it
+
+                                    is quite human to shop for his needs. All that matters is time and any
+
+                                    venture in shopping that can help to save time can be made a great
+
+                                    success.                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Food outlets</h1>
+                                <p>
+                                    Food is something that is needed to sustain life. In
+
+                                    today’s lifestyle, people have a variety of choice in food and any outlet
+
+                                    that serves good quality food turns out to be successful. Eating out is
+
+                                    not a necessity but a way of life for people today and all search for a
+
+                                    place that has good ambience and which caters good food with variety.
+
+                                    So any business related to food can be made profitable with effort and
+
+                                    imagination.                               </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 navy col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Technology</h1>
+                                <p>
+                                    Technology has brought a lot of positive changes and
+
+                                    development to the world. In fact technology has brought the world
+
+                                    together like a single society. The world of technology is on the path of
+
+                                    innovations bringing forth new techniques that make human lives
+
+                                    better and prosperous. Time and again businesses have used
+
+                                    technology to change the business process for their benefit. A
+
+                                    technology based company can profit hugely from knowledge, research
+
+                                    and development. This area includes design of technology based
+
+                                    products and services to managing various levels of intellectual
+
+                                    property like patents, trademarks etc.                               </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 navy col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Service</h1>
+                                <p>
+                                    With the progress of technology, the world is flooded with
+
+                                    luxuries and benefits. All that is lacking in today’s world is time. People
+
+                                    cannot even spare a minute waiting for anything. In this context,
+
+                                    service oriented business has a high stake. Anybody and everybody can
+
+                                    sell a service, which brings profit to the seller and the client as well. So
+
+                                    with strategic business and marketing plans, this area of business can
+
+                                    be made profitable.                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <!--
+                                        <div class="col-sm-6">
+                                            <figure class="snip1174 red col-md-4">
+                                                <img src="assets/biz2.jpg" alt="sq-sample33" />
+                                                <figcaption>
+                                                    <h1>Resumes</h1>
+                                                    <p>
+                                                        196 NATIONS has taken up a mission of becoming a leading platform, where training and investment would be provided to any individual with entrepreneur skills, to take up business as a profession.
+                                                    </p>
+                                                    <a href="#contact" data-scroll="#contact">Join Today</a>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                    -->
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Branding</h1>
+                                <p>
+                                    Every product that we buy in the market does not come
+
+                                    with a brand right from the manufacturing period. 80% of the products
+
+                                    made do not need any infrastructure at the time of production. Such
+
+                                    products are bought directly from makers and given a brand name that
+
+                                    adds to the face value of the product. Branding is a way of showing the
+
+                                    customer what can be expected from a product that you offer how the
+
+                                    product is different from the rest. By knowing the customer needs
+
+                                    correctly, branding can be taken up as a successful business.                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Financial services</h1>
+                                <p>
+                                    Financial services refer to any company that
+
+                                    deals with management of money in the line of investment banks,
+
+                                    credit card companies, stock brokerages etc. Financial services is an
+
+                                    area where challenges can be turned in to opportunities with a
+
+                                    customer oriented network strategy. It is an exciting as well as
+
+                                    important industry that has a direct impact on how business operates
+
+                                    and survive which has a definite say in the economy of a nation.                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Health care</h1>
+                                <p>
+                                    Health care is an area of business that has a good share
+
+                                    in the GDP of any country, since every family spends on health care and
+
+                                    this amount that is spent is always on the rise. Health care is an area
+
+                                    that demands personalised services at a low cost. Any company that
+
+                                    can combine innovation with a strong customer base can turn
+
+                                    successful in this field.                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Entertainment</h1>
+                                <p>
+                                    Entertainment is something that is needed for
+
+                                    mankind to amuse themselves in this busy life. Entertainment industry
+
+                                    is a promising and fast growing industry in today’s world. It includes a
+
+                                    number of sub industries from cinema, theatre, radio, television etc.
+
+                                    Entertainment industry involves developing, managing and marketing a
+
+                                    successful entertainment offering to the public. This industry has
+
+                                    gained widespread reach with the advent of satellite channels, FM
+
+                                    Stations and internet as well. Entertainment industry is an area which
+
+                                    has a direct impact on the society and also that provides job
+
+                                    opportunities to a number of people.                               </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Invention oriented business</h1>
+                                <p>
+                                    Great ideas are all around us. All we
+
+                                    need is to pay attention to the world, watch and listen. Every project
+
+                                    starts with a discovery. Invention is related to innovation where new
+
+                                    ideas are successfully introduced to the market. Invention needs
+
+                                    investment of time and money. The first step to invention is identifying
+
+                                    the problem that needs solution and imagination to resolve the
+
+                                    problem for the better. Recognising that one product used in a
+
+                                    particular environment can be used somewhere else also caters to
+
+                                    invention. Invention oriented business needs the ability to execute the
+
+                                    details of your invention and make and sell the invention for profit.                               </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Distribution / franchise</h1>
+                                <p>
+                                    Mostly companies prefer to create their
+
+                                    own products and services and then market and sell for profit. In
+
+                                    certain cases, a distribution or franchise agreement works best in order
+
+                                    to sell the product in a better way. A distributor is a company that buys
+
+                                    products from a producer and sells it. A distributor often operates
+
+                                    under its own business name. A franchise is where a party (franchisee)
+
+                                    purchases the right to market the product under the trademark of the
+
+                                    producer (franchisor). Distribution and franchise is an area of business
+
+                                    that needs less amount of risk as there is no need to market a product
+
+                                    from scratch and can take advantage of a steady built in clientele.                                </p>
+                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-sm-6">
+                        <figure class="snip1174 red col-md-4">
+                            <img src="assets/biz2.jpg" alt="sq-sample33" />
+                            <figcaption>
+                                <h1>Hotels/Appartments</h1>
+                                <p>
+                                    Hotel industry is something that is connected
+
+                                    with tourism. The rise in corporate activity and increased wish to travel
+
+                                    has made hotel industry a popular way to do business. Rapid industrial
+
+                                    progress, liberalisation policies has led to the growth and expansion of
+
+                                    all sections budget, mid -size and luxury segments of this industry. This
+
+                                    area of business involves skills in management, food and beverage,
+
+                                    housekeeping, sales and marketing, accounting etc. Hotel industry can
+
+                                    be made viable with hard work and commitment to build up a strong
+
+                                    customer base.
+                                </p>                                <a href="#contact" data-scroll="#contact">Join Today</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+        </section>
+
+        <!-- Mission -->
+        <section class="container-fluid triangle_grad1" id="mission" style="margin-bottom: 0;">
+            <div class="container">
+                <br><br><br>
+                <h2>Aim is Big</h2>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <!--
+                    <div class="col-md-3 visible-lg visible-md visible-xs">
+                        <img src="assets/mission and vison.png" style="width: 100%;">
+                    </div>
+                    <div class="col-md-2"></div>
+                    -->
+                    <div class="col-md-12">
+                        <div class="" style="text-align: center;">
+                            <p>196 NATIONS has taken up a mission of becoming a leading platform,
+                                where training and investment would be provided to any individual with
+                                entrepreneur skills, to take up business as a profession.</p>
+                            <p>The vision behind 196 NATIONS is to create a business friendly society,
+                                where people can easily do business, thereby create a lot of job
+                                opportunities and increase the GDP of nations. The signature of this brand
+                                would bring quality and happiness to the life of individuals all over the
+                                world.</p>
+                            <br><br><br>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="fullconatiner profile-card triangle_grad1" id="contact" style="margin-top: 0;">
+            <br>
+            <div class="card-body bg-warning">
+                <div class="body-description">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h3 style="color: #ffffff; font-weight: 600;">Join today maximum tomorrow</h3>
+                                <h2 style="color: #ffffff;">196 Nations</h2>
+                                <h3 style="color: #000;">Olivia Complex</h3>
+                                <h3 style="color: #000;">Press Road, Trivandrum Pin-695001</h3>
+                                <h3 style="color: #000;">info@196nations.com</h3>
+                            </div>
+                            <div class="col-md-7">
+                                <form>
+                                    <div id="contact-form" class="form-container" data-form-container>
+                                        <div class="input-container">
+                                            <div class="row">
+                                                <span class="req-input" >
+                                                    <span class="input-status" data-toggle="tooltip" data-placement="top" title="Input Your First and Last Name."> </span>
+                                                    <input type="text" data-min-length="8" placeholder="Full Name">
+                                                </span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="req-input">
+                                                    <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Email."> </span>
+                                                    <input type="email" placeholder="Email">
+                                                </span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="req-input">
+                                                    <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Input Your Phone Number."> </span>
+                                                    <input type="tel" placeholder="Phone Number">
+                                                </span>
+                                            </div>
+                                            <div class="row">
+                                                <span class="req-input message-box">
+                                                    <span class="input-status" data-toggle="tooltip" data-placement="top" title="Please Include a Message."> </span>
+                                                    <textarea type="textarea" data-min-length="10" placeholder="Message"></textarea>
+                                            </div>
+                                            <div class="row submit-row">
+                                                <button type="button" class="btn btn-block submit-form">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="container-fluid triangle_grad1">
+            <div class="container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7892.046909591765!2d76.94609669119214!3d8.497099995630657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbbb6d7579df%3A0xe7a653c6ec2a1eb3!2sInstitutions+and+students+Information+bureau!5e0!3m2!1sen!2sin!4v1476022803320" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="container-fluid text-center triangle_grad1">
+            <br><br>
+            <img class="logo_img medium" src="assets/logo.png">
+            <br><br>
+            <p>Copyright &COPY; 2016 196Nations</p>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="social" style="margin-left: -50px;">
+                        <li><a href="#" class="rss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="face" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="twit" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="google" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="linkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>	
+                </div>
+            </div>
+        </footer>
+        <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/bootstrap/bootstrap.theme.min.css" rel="stylesheet" type="text/css"/>
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
         <link href="assets/style.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
-        <script src="bootstrap/js/smoothscroll.js" type="text/javascript"></script>
+        <script src="assets/bootstrap/bootstrap.js" type="text/javascript"></script>
+        <script src="assets/bootstrap/smoothscroll.js" type="text/javascript"></script>
         <link href="http://fonts.googleapis.com/css?family=Raleway:100,300,400" type="text/css" rel="stylesheet">
+        <script src="bootstrap/js/formvalidate.js" type="text/javascript"></script>
 
         <script>
-            $(function () {
-                $(window).load(function () {
-                    $('.pageloader').delay(3000).slideUp(800).css("display", "none");
-                    smoothScroll.init({
-                        selector: '[data-scroll]',
-                        selectorHeader: null,
-                        speed: 500,
-                        easing: 'easeInOutCubic',
-                        offset: 0,
-                        callback: function (anchor, toggle) {
-                        }
-                    });
+                    $(function () {
+                        $(window).load(function () {
+                            $('.pageloader').delay(3000).slideUp(800).css("display", "none");
+                            smoothScroll.init({
+                                selector: '[data-scroll]',
+                                selectorHeader: null,
+                                speed: 500,
+                                easing: 'easeInOutCubic',
+                                offset: 0,
+                                callback: function (anchor, toggle) {
+                                }
+                            });
 
-                    $("#gotop").click();
+                            $("#gotop").click();
 
 
-                })
-            })
+                        })
+                    })
         </script>
-
     </body>
 </html>
