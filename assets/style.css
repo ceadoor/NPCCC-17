@@ -19,7 +19,6 @@ h2{font-size: 52px;}
 
 .fullconatiner{ width: 100%; min-height: 100%; }
 .fixed_bg{ background-attachment: fixed; background-repeat: no-repeat; background-size: cover; }
-
 img.medium{ height: 100px; }
 
 img.profile.round{border-radius: 50%;}
@@ -69,7 +68,7 @@ img.profile.round{border-radius: 50%;}
 
 
 .bg-warning {
-    background-color: #ffc107 !important;
+    background-color: #05b5bd !important;
     color: #fff !important
 }
 
@@ -137,7 +136,7 @@ img.profile.round{border-radius: 50%;}
 
 ul.social {list-style:none;}
 ul.social li {display:inline; padding: 0; margin:0 5px;}
-ul.social li a {display:inline-block; margi:0 auto; -moz-border-radius:50%; -webkit-border-radius:50%; border-radius:50%; text-align:center; width: 50px; height: 50px; font-size:20px; position:relative; background-color: #ffc107;}
+ul.social li a {display:inline-block; margi:0 auto; -moz-border-radius:50%; -webkit-border-radius:50%; border-radius:50%; text-align:center; width: 50px; height: 50px; font-size:20px; position:relative; background-color: #05b5bd;}
 ul.social li a i {color:#FFF; text-align: center; margin:0; line-height:50px; -webkit-transition: all 0.8s; -moz-transition: all 0.8s; -o-transition: all 0.8s; -ms-transition: all 0.8s; transition: all 0.8s;}
 ul.social li a:hover i { -moz-transform: rotate(360deg); -webkit-transform: rotate(360deg); -ms--transform: rotate(360deg);	transform: rotate(360deg);
                          -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -o-transition: all 0.2s; -ms-transition: all 0.2s; transition: all 0.2s;}
