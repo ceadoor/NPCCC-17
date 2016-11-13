@@ -151,21 +151,20 @@ function validateEmail(email) {
 }
 function adjustui() {
     if (window.innerWidth > 720) {
-        if (window.scrollY > window.innerHeight)
-            $(".defnav").css("background", "linear-gradient(135deg, rgba(255,255,255,.8) 30%, #05b5ad  0)");
+        if (window.scrollY >= window.innerHeight)
+            $(".defnav").css("background", "#0f0044");
         else
-            $(".defnav").css("background", "linear-gradient(135deg, rgba(255,255,255,.7) 30%, rgba(1,1,1,.3) 0)");
+            $(".defnav").css("background", "none");
     }
 }
 function adjustui2() {
     if (window.innerWidth > 720) {
-        $(".defnav").css("background", "linear-gradient(135deg, rgba(255,255,255,.8) 30%, #05b5bd 0)");
+        $(".defnav").css("background", "#0f0044");
         $(".defnav").removeClass("navbar-default");
         $(".defnav").addClass("navbar-inverse")
     } else {
-        $(".defnav").css("background", "#05b5bd");
-        $(".defnav").addClass("navbar-default");
-        $(".defnav").removeClass("navbar-inverse")
+        $(".defnav").css("background", "#0f0044");
+        $(".defnav").addClass("navbar-inverse");
     }
 }
 window.onresize = adjustui2;

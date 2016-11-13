@@ -164,7 +164,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#" style="margin: 0;padding: 0;">
-                        <img id="loggo" src="assets/logo-nav.png" id="mylogo">
+                        <img id="loggo" src="assets/logo-wide.png" id="mylogo">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -185,7 +185,7 @@
         </nav>
 
         <!-- slider -->
-        <section id="slidex" class="fullconatiner fixed_bg" style="background-image: url(assets/sliderbg.jpg); z-index: 95; position: relative;">
+        <section id="slidex" class="fullconatiner fixed_bg" style="background-image: url(http://wowslider.com/sliders/demo-5/data/images/sur.jpg); z-index: 95; position: relative;">
             <div class="fullconatiner fixed_bg" style="position: absolute; top: 0;display: flex; align-items: center; left: 0; background: url(assets/pattern-2.png)">
                 <div class="container">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -216,7 +216,7 @@
                                         infrastructure to a candidate, who is interested to start with a business, after
                                         successfully completing the training.</p>
                                     <p>
-                                        <a class="btn btn-success btn-lg" href="#contact" data-scroll="#contact">Join today maximum tomorrow</a>
+                                        <a class="btn btn-success btn-lg" href="#contact" data-scroll="#contact">Register Now</a>
                                     </p>
                                 </div>
                             </div>
@@ -259,7 +259,7 @@
                             </p>-->
                         </div>
                     </div>
-                    
+
                     <div class="col-md-3 col-sm-3">
                         <div>
                             <i class="fa fa-fax fa-4x main-color"></i>
@@ -289,14 +289,11 @@
         <!-- About -->
         <section class="fullconatiner" id="about"style="display: flex; align-items: center; ">
             <div class="container">
+                <img src="assets/logo.png" class="visible-lg visible-md" style="float: right; margin: 0;">
+                <h2 style="">About NPCCC</h2>
                 <br><br>
-                <h2 style="">Introducing Ourself</h2>
-
-                <img src="assets/logo.png" class="visible-lg visible-md" style="float: right;">
-
+                
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <button class="btn btn-default" onclick="$('.hiddenx.x1').slideToggle('slow');">Read More</button>
-                <br><br>
             </div>
         </section>
 
@@ -582,7 +579,7 @@
         <!-- Map -->
         <section class="container-fluid triangle_grad1">
             <div class="container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7892.046909591765!2d76.94609669119214!3d8.497099995630657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbbb6d7579df%3A0xe7a653c6ec2a1eb3!2sInstitutions+and+students+Information+bureau!5e0!3m2!1sen!2sin!4v1476022803320" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3938.913630913807!2d76.71940131421026!3d9.162263993428509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06119d2c306baf%3A0x5f81e39c658d48fb!2sWyte+Portico+Hotel!5e0!3m2!1sen!2sin!4v1479018729102" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -616,24 +613,24 @@
         <script src="bootstrap/js/formvalidate.js" type="text/javascript"></script>
         <script src="assets/bootstrap/formvalidate.js" type="text/javascript"></script>
         <script>
-                    $(function () {
-                        $(window).load(function () {
-                            $('.pageloader').delay(3000).slideUp(800).css("display", "none");
-                            smoothScroll.init({
-                                selector: '[data-scroll]',
-                                selectorHeader: null,
-                                speed: 500,
-                                easing: 'easeInOutCubic',
-                                offset: 0,
-                                callback: function (anchor, toggle) {
-                                }
-                            });
+            $(function () {
+                $(window).load(function () {
+                    $('.pageloader').delay(3000).slideUp(800).css("display", "none");
+                    smoothScroll.init({
+                        selector: '[data-scroll]',
+                        selectorHeader: null,
+                        speed: 500,
+                        easing: 'easeInOutCubic',
+                        offset: 0,
+                        callback: function (anchor, toggle) {
+                        }
+                    });
 
-                            $("#gotop").click();
+                    $("#gotop").click();
 
 
-                        })
-                    })
+                })
+            })
         </script>
     </body>
 </html>
