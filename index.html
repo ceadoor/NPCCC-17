@@ -33,125 +33,66 @@
                 font-size: 60px;
                 display: block;
             }
-            .sp-hydrogen {
-                width: 96px;
-                height: 96px;
-                clear: both;
-                margin: 60px auto;
-                position: relative;
-                border: 3px #1ABC9C solid;
-                border-radius: 50%;
-                -webkit-animation: spHydro 0.7s infinite linear;
-                animation: spHydro 0.7s infinite linear;
-            }
-            .sp-hydrogen:before, .sp-hydrogen:after {
-                content: '';
+
+
+
+            #loader {
                 position: absolute;
-                width: 30px;
-                height: 30px;
-                background-color: #252830;
+                left: 50%;
+                top: 50%;
+                z-index: 1;
+                width: 150px;
+                height: 150px;
+                margin: -75px 0 0 -75px;
+                border: 16px solid #f3f3f3;
                 border-radius: 50%;
-            }
-            .sp-hydrogen:before {
-                top: calc( 50% - 15px );
-                left: calc( 50% - 15px );
-            }
-            .sp-hydrogen:after {
-                top: -3px;
-                left: -3px;
+                border-top: 16px solid #3498db;
+                width: 120px;
+                height: 120px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
             }
 
-            @-webkit-keyframes spHydro {
-                from {
-                    -webkit-transform: rotate(0deg);
-                }
-                to {
-                    -webkit-transform: rotate(359deg);
-                }
-            }
-            @keyframes spHydro {
-                from {
-                    transform: rotate(0deg);
-                }
-                to {
-                    transform: rotate(359deg);
-                }
+            @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
             }
 
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
 
-
-            .animated {
+            /* Add animation to "page content" */
+            .animate-bottom {
+                position: relative;
+                -webkit-animation-name: animatebottom;
                 -webkit-animation-duration: 1s;
-                animation-duration: 1s;
-                -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
+                animation-name: animatebottom;
+                animation-duration: 1s
             }
 
-            .animated.infinite {
-                -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
+            @-webkit-keyframes animatebottom {
+                from { bottom:-100px; opacity:0 } 
+                to { bottom:0px; opacity:1 }
             }
 
-            @-webkit-keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                }
-
-                100% {
-                    opacity: 1;
-                }
+            @keyframes animatebottom { 
+                from{ bottom:-100px; opacity:0 } 
+                to{ bottom:0; opacity:1 }
             }
 
-            @keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                }
-
-                100% {
-                    opacity: 1;
-                }
-            }
-
-            .fadeIn {
-                -webkit-animation-name: fadeIn;
-                animation-name: fadeIn;
-            }
-
-            @-webkit-keyframes fadeOut {
-                0% {
-                    opacity: 1;
-                }
-
-                100% {
-                    opacity: 0;
-                }
-            }
-
-            @keyframes fadeOut {
-                0% {
-                    opacity: 1;
-                }
-
-                100% {
-                    opacity: 0;
-                }
-            }
-
-            .fadeOut {
-                -webkit-animation-name: fadeOut;
-                animation-name: fadeOut;
-            }
 
         </style>
     </head>
     <body>
-        <!--
+
         <div class="pageloader gray-bg">
             <div class="loader">
-                <div class="sp-hydrogen"></div>
+                <div id="loader"></div>
             </div>
         </div>
--->
+
         <a href="#" data-scroll="#" id="gotop"><img src="assets/scrollup.png" style="position: fixed; width: 50px; z-index: 90; right: 40px; bottom: 40px;"></a>
 
         <!-- Nav Bar -->
@@ -187,7 +128,7 @@
         </nav>
 
         <!-- slider -->
-        <section id="slidex" class="fullconatiner fixed_bg" style="background-image: url(http://wowslider.com/sliders/demo-5/data/images/sur.jpg); z-index: 95; position: relative;">
+        <section id="slidex" class="fullconatiner fixed_bg" style="background-image: url(assets/bg.jpg); z-index: 95; position: relative;">
             <div class="fullconatiner fixed_bg" style="position: absolute; top: 0;display: flex; align-items: center; left: 0; background: url(assets/pattern-2.png)">
                 <div class="container">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -203,9 +144,9 @@
                             </div>
                             <div class="item active">
                                 <div class="col-md-12 text-center">
-                                    
-                                  
-                                  <h2>NPCCC 2017 starts in</h2>
+
+
+                                    <h2>NPCCC 2017 starts in</h2>
 
                                     <br>
 
@@ -230,9 +171,9 @@
 
 
                                     <h3>February 1,2,3 2017</h3>
-                                  
-                                  
-                                  
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -366,7 +307,7 @@
         <section class="fullconatiner" id="track" style="display:flex; align-items:center;">
             <div class="container">
                 <h2 class="text-center">Track</h2>
-                
+
                 <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 <br>
                 <div class="row">
@@ -447,7 +388,7 @@
                 <div class="body-description">
                     <div class="container">
 
-                         <div class="row">
+                        <div class="row">
                             <div class="col-md-5">
                                 <h3 style="color: #ffffff; font-weight: 600;">Register now</h3>
                                 <h2 style="color: #ffffff;">NPCCC16</h2>
