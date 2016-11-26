@@ -24,7 +24,7 @@ img.medium{ height: 100px; }
 img.profile.round{border-radius: 50%;}
 
 .navbar-inverse a{color: white !important;}
-
+.navbar-default a{color: #333333;}
 
 .divider {
     width: 100%;
