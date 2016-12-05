@@ -19,8 +19,11 @@ h2{font-size: 52px;}
 
 
 .conf-comm{
-    border-bottom: solid #333333 1px;
-    margin: 20px;
+    //border-bottom: solid #333333 1px;
+    margin: 20px 0;
+}
+.conf-comm>span{
+    font-size: small;
 }
 
 
