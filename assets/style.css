@@ -16,6 +16,18 @@ h1,h2,h3,h4,h5,h6{
 h2{font-size: 52px;}
 
 
+
+
+.conf-comm{
+    border-bottom: solid #333333 1px;
+    margin: 20px;
+}
+
+
+
+
+
+
 .btn{border-radius: 0;}
 
 .fullconatiner{ width: 100%; min-height: 100%; }
