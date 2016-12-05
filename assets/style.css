@@ -26,6 +26,9 @@ img.profile.round{border-radius: 50%;}
 .navbar-inverse a{color: white !important;}
 .navbar-default a{color: #333333;}
 
+
+#events p+ul li{ list-style-type: none; list-style: none; margin-top: 10px;}
+
 .divider {
     width: 100%;
     margin: 20px auto 15px;
