@@ -668,21 +668,9 @@ figure.snip1174.hover a {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 #clockdiv{
 	font-family: sans-serif;
-	color: #fff;
+	color: #000;
 	display: inline-block;
 	font-weight: 100;
 	text-align: center;
@@ -708,12 +696,6 @@ figure.snip1174.hover a {
 	padding-top: 5px;
 	font-size: 16px;
 }
-
-
-
-
-
-
 
 
 #bg {
