@@ -5,7 +5,7 @@
 
 body, html{margin: 0; height: 100%;}
 p{font-size: 15px; line-height: 1.8;font-family: "Lato", sans-serif; font-weight: 400;}
-body{ overflow-x: hidden;}
+//body{ overflow-x: hidden;}
 
 body{background: url(groovepaper.png);}
 
@@ -708,6 +708,7 @@ figure.snip1174.hover a {
 		left: 0;
 		//opacity: 0.25;
                 //overflow: hidden;
+                position: static;
 		top: 0;
 		width: 100%;
 		z-index: 1;
