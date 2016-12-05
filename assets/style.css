@@ -26,9 +26,11 @@ h2{font-size: 52px;}
     font-size: small;
 }
 
+.org-comm>*{margin: 0;}
 
+.org-comm{margin-bottom: 20px; margin-top: 20px;}
 
-
+.org-comm>p{font-weight: bold;}
 
 
 .btn{border-radius: 0;}
