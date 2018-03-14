@@ -210,12 +210,16 @@ function initializeClock(id, endtime) {
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
+      document.getElementById("beginEvent").innerHTML = "Sorry the event has already begun";
+      document.getElementById("clockdiv").innerHTML = "";
     }
   }
 
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
+
 }
+
 
 var deadline = new Date(Date.parse("02/01/2017"));
 initializeClock('clockdiv', deadline);
